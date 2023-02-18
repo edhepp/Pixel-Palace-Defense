@@ -8,7 +8,7 @@ public class EnemyHealth : MonoBehaviour
     int currentHitPoints = 0;
 
 
-    void Start()
+    void OnEnable()
     {
         currentHitPoints = maxHitpoints;
     }
@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
         currentHitPoints--;
         if (currentHitPoints < 1)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
